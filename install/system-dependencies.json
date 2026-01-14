@@ -1,0 +1,6 @@
+{
+    "debian": [
+        "python3-libgpiod",
+        "x11-xserver-utils"
+    ]
+}

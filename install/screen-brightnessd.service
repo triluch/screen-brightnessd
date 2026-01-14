@@ -1,0 +1,20 @@
+[Unit]
+Description=Screen Brightness Daemon (DPMS-aware GPIO button emulator)
+After=KlipperScreen.service
+Wants=KlipperScreen.service
+
+[Service]
+Type=simple
+User=%USER%
+SupplementaryGroups=dialout
+WorkingDirectory=%DIRECTORY%
+# This may be needed for X sometimes
+# Environment=XAUTHORITY=/home/%USER%/.Xauthority
+ExecStart=/usr/bin/python3 %DIRECTORY%/main.py /home/%USER%/printer_data/config/screen-brightnessd.ini
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

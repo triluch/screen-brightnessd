@@ -1,0 +1,9 @@
+
+# screen-brightnessd update_manager entry
+[update_manager screen-brightnessd]
+type: git_repo
+path: %DIRECTORY%
+origin: https://github.com/triluch/screen-brightnessd.git
+primary_branch: main
+managed_services: screen-brightnessd
+system_dependencies: %DIRECTORY%/install/system-dependencies.json
